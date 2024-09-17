@@ -30,11 +30,12 @@ public class Book {
     @Column(nullable = false)
     private String isbn;
 
-    @Column(name = "publish name", nullable = false, unique = true)
+    @Column(name = "publish_name", nullable = false, unique = true)
     private String publisherName;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST,CascadeType.MERGE, CascadeType.REMOVE} )
     @JoinColumn
     private Author author;
+
 
 }
